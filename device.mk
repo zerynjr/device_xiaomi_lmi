@@ -40,6 +40,10 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Inherit from xiaomi sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/common.mk)
 
+# Device parts
+PRODUCT_PACKAGES += \
+    DeviceParts
+
 # Kernel modules
 KERNEL_MODULES_ORIG := $(LOCAL_PATH)/prebuilt/modules
 KERNEL_MODULES_DEST := $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/lib/modules
