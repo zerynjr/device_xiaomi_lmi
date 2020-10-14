@@ -14,6 +14,10 @@ PRODUCT_PACKAGES += \
 # Keylayout
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
+     
+# Fingerprint
+
+TARGET_HAS_FOD := true
 
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
