@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+TARGET_USES_PREBUILT_KERNEL := true
+
 # Inherit from xiaomi sm8250-common
 -include device/xiaomi/sm8250-common/BoardConfigCommon.mk
 
@@ -31,7 +33,14 @@ SOONG_CONFIG_XIAOMI_KONA_FOD_POS_Y = 1655
 SOONG_CONFIG_XIAOMI_KONA_FOD_SIZE = 202
 
 # Kernel
+ifeq ($(TARGET_USES_PREBUILT_KERNEL), true)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+else
 TARGET_KERNEL_CONFIG := vendor/lmi_defconfig
+endif
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
