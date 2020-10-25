@@ -42,6 +42,9 @@ else
 TARGET_KERNEL_CONFIG := vendor/lmi_defconfig
 endif
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/dev/input/event3"
+
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
