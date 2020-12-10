@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
 
 # Kernel modules
 KERNEL_MODULES_ORIG := $(LOCAL_PATH)/prebuilt/modules
-KERNEL_MODULES_DEST := $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/lib/modules
+KERNEL_MODULES_DEST := $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/lib/modules
 
 PRODUCT_COPY_FILES += \
     $(KERNEL_MODULES_ORIG)/audio_adsp_loader.ko:$(KERNEL_MODULES_DEST)/audio_adsp_loader.ko \
@@ -78,21 +78,23 @@ PRODUCT_COPY_FILES += \
     $(KERNEL_MODULES_ORIG)/audio_wcd_core.ko:$(KERNEL_MODULES_DEST)/audio_wcd_core.ko \
     $(KERNEL_MODULES_ORIG)/audio_wsa881x.ko:$(KERNEL_MODULES_DEST)/audio_wsa881x.ko \
     $(KERNEL_MODULES_ORIG)/audio_wsa_macro.ko:$(KERNEL_MODULES_DEST)/audio_wsa_macro.ko \
-    $(KERNEL_MODULES_ORIG)/br_netfilter.ko:$(KERNEL_MODULES_DEST)/br_netfilter.ko \
     $(KERNEL_MODULES_ORIG)/exfat.ko:$(KERNEL_MODULES_DEST)/exfat.ko \
+    $(KERNEL_MODULES_ORIG)/fragmentize.ko:$(KERNEL_MODULES_DEST)/fragmentize.ko \
     $(KERNEL_MODULES_ORIG)/gspca_main.ko:$(KERNEL_MODULES_DEST)/gspca_main.ko \
     $(KERNEL_MODULES_ORIG)/lcd.ko:$(KERNEL_MODULES_DEST)/lcd.ko \
     $(KERNEL_MODULES_ORIG)/llcc_perfmon.ko:$(KERNEL_MODULES_DEST)/llcc_perfmon.ko \
     $(KERNEL_MODULES_ORIG)/modules.alias:$(KERNEL_MODULES_DEST)/modules.alias \
     $(KERNEL_MODULES_ORIG)/modules.dep:$(KERNEL_MODULES_DEST)/modules.dep \
+    $(KERNEL_MODULES_ORIG)/modules.load:$(KERNEL_MODULES_DEST)/modules.load \
+    $(KERNEL_MODULES_ORIG)/modules.softdep:$(KERNEL_MODULES_DEST)/modules.softdep \
     $(KERNEL_MODULES_ORIG)/mpq-adapter.ko:$(KERNEL_MODULES_DEST)/mpq-adapter.ko \
     $(KERNEL_MODULES_ORIG)/mpq-dmx-hw-plugin.ko:$(KERNEL_MODULES_DEST)/mpq-dmx-hw-plugin.ko \
-    $(KERNEL_MODULES_ORIG)/qca_cld3_wlan.ko:$(KERNEL_MODULES_DEST)/qca_cld3_wlan.ko \
+    $(KERNEL_MODULES_ORIG)/qca_cld3_qca6390.ko:$(KERNEL_MODULES_DEST)/qca_cld3_qca6390.ko \
+    $(KERNEL_MODULES_ORIG)/qca_cld3_qca6490.ko:$(KERNEL_MODULES_DEST)/qca_cld3_qca6490.ko \
     $(KERNEL_MODULES_ORIG)/rdbg.ko:$(KERNEL_MODULES_DEST)/rdbg.ko \
     $(KERNEL_MODULES_ORIG)/rmnet_perf.ko:$(KERNEL_MODULES_DEST)/rmnet_perf.ko \
     $(KERNEL_MODULES_ORIG)/rmnet_shs.ko:$(KERNEL_MODULES_DEST)/rmnet_shs.ko \
-    $(KERNEL_MODULES_ORIG)/sla.ko:$(KERNEL_MODULES_DEST)/sla.ko \
-    $(KERNEL_MODULES_ORIG)/tspp.ko:$(KERNEL_MODULES_DEST)/tspp.ko
+    $(KERNEL_MODULES_ORIG)/sla.ko:$(KERNEL_MODULES_DEST)/sla.ko
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
